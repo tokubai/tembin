@@ -12,7 +12,7 @@ class Tembin::Applyer
     @out = out
   end
 
-  def run(dry_run: true)
+  def run
     remote_queries = Tembin::Redash::Query.created_by_me
     remote_queries.each do |remote_query|
       @out.puts(h.color("#{remote_query.name}", :green))
