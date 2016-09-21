@@ -1,5 +1,6 @@
-require "tembin/version"
-
-module Tembin
-  # Your code goes here...
-end
+require 'tembin/version'
+require 'tembin/redash'
+require 'tembin/element_parser'
+require 'tembin/applyer'
+require 'tembin/exporter'
+require 'tembin/cli'
