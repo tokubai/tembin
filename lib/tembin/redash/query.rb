@@ -6,7 +6,7 @@ module Tembin::Redash
     def self.all
       response = Tembin::Redash::Client.current.get('/api/queries')
       raise RequestNotSucceedError, response.body if !response.success?
-      JSON.parse(response.body).map { |j| self.new(j) }
+      JSON.parse(response.body)['results'].map { |j| self.new(j) }
     end
 
     def self.created_by_me
