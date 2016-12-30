@@ -7,7 +7,7 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tembin', '0.1.0.alpha1'
+gem 'tembin', '0.1.0.alpha2'
 ```
 
 And then execute:
