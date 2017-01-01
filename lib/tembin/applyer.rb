@@ -62,7 +62,7 @@ class Tembin::Applyer
       if @dry_run
         @out.puts(Diffy::Diff.new(remote.sql, local.attributes[:sql]).to_s(:color))
       else
-        remote.update!(element.attributes[:sql])
+        remote.update!(local.attributes[:sql])
         @out.puts(h.color("   --> updated.", :green))
       end
     else
