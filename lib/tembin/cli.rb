@@ -53,9 +53,5 @@ class Tembin::CLI < Thor
     if Tembin::Redash.config['api_key'].nil?
       raise ArgumentError, "Re:dash api key is empty. Please set Tembin::Redash.config['api_key']"
     end
-
-    if Tembin::Redash.config['authorized_user_email'].nil?
-      raise ArgumentError, "Re:dash user login email is empty. Please set Tembin::Redash.config['authorized_user_email']"
-    end
   end
 end

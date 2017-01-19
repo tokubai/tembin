@@ -5,12 +5,11 @@ module Tembin::Redash
     class RequestNotSucceedError < StandardError; end
 
     def self.current
-      Thread.current[:__tembin__redash_client__] ||= new(Tembin::Redash.config['api_key'], authorized_user_email: Tembin::Redash.config['authorized_user_email'])
+      Thread.current[:__tembin__redash_client__] ||= new(Tembin::Redash.config['api_key'])
     end
 
-    def initialize(api_key, authorized_user_email: nil)
+    def initialize(api_key)
       @api_key = api_key
-      @authorized_user_email = authorized_user_email
     end
 
     def get(path, params: {})
