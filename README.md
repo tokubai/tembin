@@ -25,7 +25,6 @@ Or install it yourself as:
 ```
 host: 'https://your.redash.host'
 api_key: <%= ENV['REDASH_API_KEY'] %>
-authorized_user_email: 'your-account@email.com'
 ```
 
 ### Export

@@ -7,7 +7,6 @@ module Tembin::Redash
     @config ||= {
       api_key:               nil,
       host:                  nil,
-      authorized_user_email: nil,
     }
   end
 end

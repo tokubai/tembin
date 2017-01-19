@@ -10,7 +10,9 @@ module Tembin::Redash
     end
 
     def self.created_by_me
-      all.select { |q| q.author_email == Tembin::Redash.config['authorized_user_email'] }
+      response = Tembin::Redash::Client.current.get('/api/queries/my')
+      raise RequestNotSucceedError, response.body if !response.success?
+      JSON.parse(response.body)['results'].map { |j| self.new(j) }
     end
 
     INITIAL_DATA_SOURCE_ID = 1
